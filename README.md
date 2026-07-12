@@ -32,18 +32,79 @@
 
 ```mermaid
 flowchart LR
-    User["用户 / Qt Widgets"] --> Form["主窗口与 QStackedWidget"]
-    Form --> Monitor["设备监控页"]
-    Form --> Control["设备控制页"]
-    Form --> Network["MQTT 网络页"]
-    Monitor --> BoardClient["BoardClient / QTcpSocket"]
-    Control --> BoardClient
-    BoardClient <-->|"逐行 JSON / TCP :8080"| BoardServer["嵌入式 Linux 板端服务"]
-    BoardServer --> Sensors["温湿度 / 光照"]
-    BoardServer --> Actuators["LED / 风扇 / 蜂鸣器"]
-    Control -->|"发布控制 JSON"| Network
-    Network <-->|"订阅 / 发布"| Broker["MQTT Broker"]
-    Broker <--> VirtualDevice["虚拟设备 / 其他 MQTT 客户端"]
+    User(["用户"])
+
+    subgraph UI["Qt Widgets 表现层"]
+        direction TB
+        Login["登录 / 注册"]
+        Form["主窗口 Form<br/>QStackedWidget 页面管理"]
+        Home["状态总览"]
+        Monitor["设备监控"]
+        Control["设备控制"]
+        Network["MQTT 配置"]
+        Settings["系统设置"]
+
+        Login --> Form
+        Form --> Home
+        Form --> Monitor
+        Form --> Control
+        Form --> Network
+        Form --> Settings
+    end
+
+    subgraph Core["业务与通信层"]
+        direction TB
+        BoardClient["BoardClient<br/>QTcpSocket"]
+        MqttClient["NetworkWidget<br/>QMqttClient"]
+        Json["QJsonDocument<br/>JSON 编解码"]
+        Status["Qt Signals / Slots<br/>状态同步与日志"]
+
+        BoardClient --- Json
+        MqttClient --- Json
+        BoardClient --> Status
+        MqttClient --> Status
+    end
+
+    subgraph External["网络与设备层"]
+        direction TB
+        BoardServer["嵌入式 Linux<br/>板端 TCP 服务"]
+        Broker["MQTT Broker"]
+        VirtualDevice["虚拟设备 / MQTT 客户端"]
+        Sensors["温湿度 / 光照传感器"]
+        Actuators["LED / 风扇 / 蜂鸣器"]
+
+        BoardServer --> Sensors
+        BoardServer --> Actuators
+        Broker <--> VirtualDevice
+    end
+
+    User --> Login
+    Monitor -->|"读取状态"| BoardClient
+    Control -->|"控制指令"| BoardClient
+    Control -->|"发布 JSON"| MqttClient
+    Network -->|"连接 / 订阅 / 发布"| MqttClient
+    BoardClient <-->|"TCP :8080 · 逐行 JSON"| BoardServer
+    MqttClient <-->|"MQTT Topics"| Broker
+    Status -.->|"刷新界面"| Home
+    Status -.->|"更新数据"| Monitor
+
+    classDef actor fill:#0f172a,color:#ffffff,stroke:#0f172a,stroke-width:2px;
+    classDef ui fill:#eff6ff,color:#1e3a8a,stroke:#3b82f6,stroke-width:1.5px;
+    classDef core fill:#ecfdf5,color:#065f46,stroke:#10b981,stroke-width:1.5px;
+    classDef tcp fill:#fff7ed,color:#9a3412,stroke:#f97316,stroke-width:1.5px;
+    classDef mqtt fill:#faf5ff,color:#6b21a8,stroke:#a855f7,stroke-width:1.5px;
+    classDef device fill:#f0fdfa,color:#115e59,stroke:#14b8a6,stroke-width:1.5px;
+
+    class User actor;
+    class Login,Form,Home,Monitor,Control,Network,Settings ui;
+    class Json,Status core;
+    class BoardClient,BoardServer tcp;
+    class MqttClient,Broker,VirtualDevice mqtt;
+    class Sensors,Actuators device;
+
+    style UI fill:#f8fbff,stroke:#93c5fd,stroke-width:1px
+    style Core fill:#f7fefb,stroke:#6ee7b7,stroke-width:1px
+    style External fill:#fcfcfd,stroke:#cbd5e1,stroke-width:1px
 ```
 
 ## Qt Widgets 页面与模块
