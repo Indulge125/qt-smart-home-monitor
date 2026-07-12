@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsWidget</class>
+ <widget class="QWidget" name="SettingsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>930</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>智能家居系统 - 系统设置</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f6f8fb;
+    color: #1f2937;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+}
+
+QLabel {
+    background: transparent;
+    color: #273445;
+    font-weight: 500;
+}
+
+QLabel#labelTitle {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QFrame#themeCard, QFrame#previewCard {
+    background-color: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+}
+
+QTextEdit, QComboBox {
+    background-color: #ffffff;
+    color: #202a3a;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #34c38f;
+}
+
+QTextEdit:focus, QComboBox:focus {
+    border: 1px solid #34c38f;
+}
+
+QTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+QPushButton {
+    background-color: #34c38f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    min-height: 34px;
+    padding: 5px 16px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #27ae7e;
+}
+
+QPushButton#btnBack {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #d9e1ec;
+}
+
+QPushButton#btnBack:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>18</number>
+   </property>
+   <property name="leftMargin">
+    <number>32</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>32</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel" name="labelTitle">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>系统设置界面</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="headerSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnBack">
+       <property name="minimumSize">
+        <size>
+         <width>140</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>返回主界面</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="themeCard">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QGridLayout" name="themeGrid">
+      <property name="leftMargin">
+       <number>24</number>
+      </property>
+      <property name="topMargin">
+       <number>22</number>
+      </property>
+      <property name="rightMargin">
+       <number>24</number>
+      </property>
+      <property name="bottomMargin">
+       <number>22</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>18</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>14</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelTheme">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>界面风格：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBoxTheme">
+        <property name="minimumSize">
+         <size>
+          <width>260</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QLabel" name="labelMessage">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>切换界面风格后，会立即修改整个系统的页面底色</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="previewCard">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="previewLayout">
+      <property name="leftMargin">
+       <number>24</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>24</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelPreview">
+        <property name="text">
+         <string>当前风格说明：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEditPreview">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>260</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="bottomSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

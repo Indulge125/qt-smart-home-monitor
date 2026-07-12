@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>devicewidget</class>
+ <widget class="QWidget" name="devicewidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>930</width>
+    <height>718</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>智能家居系统 - 设备控制</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f6f8fb;
+    color: #1f2937;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+}
+
+QLabel {
+    background: transparent;
+    color: #273445;
+    font-weight: 500;
+}
+
+QLabel#labelTitle {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QFrame#deviceCard, QFrame#commandCard, QFrame#logCard {
+    background-color: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+}
+
+QLineEdit, QTextEdit, QComboBox {
+    background-color: #ffffff;
+    color: #202a3a;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #34c38f;
+}
+
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 1px solid #34c38f;
+}
+
+QLineEdit[readOnly=&quot;true&quot;], QTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+QPushButton {
+    background-color: #34c38f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    min-height: 34px;
+    padding: 5px 16px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #27ae7e;
+}
+
+QPushButton:pressed {
+    background-color: #21966e;
+}
+
+QPushButton#btnBack {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #d9e1ec;
+}
+
+QPushButton#btnBack:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>16</number>
+   </property>
+   <property name="leftMargin">
+    <number>32</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>32</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel" name="labelTitle">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>设备控制界面</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="headerSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnBack">
+       <property name="minimumSize">
+        <size>
+         <width>140</width>
+         <height>46</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>返回主界面</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="deviceCard">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QGridLayout" name="deviceGrid">
+      <property name="leftMargin">
+       <number>24</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>24</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>16</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>12</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelBoardLed">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>板子LED状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEditBoardLed">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="btnBoardLedToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelBoardFan">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>板子风扇状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEditBoardFan">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btnBoardFanToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelBoardBeeper">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>板子蜂鸣器状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEditBoardBeeper">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="btnBoardBeeperToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelMetaLed">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>元宇宙LED状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEditMetaLed">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="btnMetaLedToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="labelMetaFan">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>元宇宙风扇状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEditMetaFan">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="btnMetaFanToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="labelMetaAlarm">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>元宇宙报警器状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="lineEditMetaAlarm">
+        <property name="minimumSize">
+         <size>
+          <width>360</width>
+          <height>38</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="btnMetaAlarmToggle">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomLayout">
+     <property name="spacing">
+      <number>16</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="commandCard">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <layout class="QVBoxLayout" name="commandLayout">
+        <property name="leftMargin">
+         <number>18</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>18</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelCommand">
+          <property name="text">
+           <string>当前控制 JSON：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditCommand">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>110</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="logCard">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <layout class="QVBoxLayout" name="logLayout">
+        <property name="leftMargin">
+         <number>18</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>18</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelLog">
+          <property name="text">
+           <string>操作日志：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditLog">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>110</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+[tcp]
+# Replace with the embedded board or simulator address on your own network.
+host=127.0.0.1
+port=8080
+
+[mqtt]
+# Use your own broker. Keep app.ini local because it may contain credentials.
+host=broker.example.com
+port=1883
+client_id=SmartHomeQtClient
+username=
+password=
+subscribe_topic=smart-home/device/0/state
+publish_topic=smart-home/device/0/control

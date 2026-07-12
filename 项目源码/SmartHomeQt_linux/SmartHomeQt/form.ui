@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>980</width>
+    <height>980</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>980</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>634</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Form {
+    background-color: #f6f8fb;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+    color: #1f2937;
+}
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QFrame" name="sidebar">
+     <property name="minimumSize">
+      <size>
+       <width>224</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>248</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #e5eaf1;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="labelTitle">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f2937;
+}</string>
+        </property>
+        <property name="text">
+         <string>              智能家居系统</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelUser">
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelUser {
+    color: #64748b;
+}</string>
+        </property>
+        <property name="text">
+         <string>当前用户：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnHome">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    min-height: 38px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+        </property>
+        <property name="text">
+         <string>主界面</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnMonitor">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    min-height: 38px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+        </property>
+        <property name="text">
+         <string>监视界面</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnNetwork">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    min-height: 38px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+        </property>
+        <property name="text">
+         <string>网络连接</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDevice">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    min-height: 38px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+        </property>
+        <property name="text">
+         <string>设备控制</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSettings">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    min-height: 38px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+        </property>
+        <property name="text">
+         <string>系统设置</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnLogout">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>42</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnLogout {
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}</string>
+        </property>
+        <property name="text">
+         <string>退出登陆</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <widget class="QWidget" name="page"/>
+     <widget class="QWidget" name="page_2"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

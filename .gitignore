@@ -1,0 +1,77 @@
+# Qt / qmake build directories
+build/
+build-*/
+**/build/
+**/build-*/
+debug/
+release/
+**/debug/
+**/release/
+
+# Compiled objects and binaries
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.so.*
+*.a
+*.lib
+*.out
+a.out
+
+# qmake generated files
+Makefile
+Makefile.*
+.qmake.stash
+*.pro.user
+*.pro.user.*
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+
+# IDE and editor settings
+.vscode/
+.idea/
+.vs/
+.qtcreator/
+*.creator
+*.creator.user
+*.files
+*.includes
+*.config
+*.suo
+*.user
+
+# Logs, caches and temporary files
+*.log
+*.cache
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+temp/
+
+# Local runtime data and private configuration
+data/
+**/data/
+config/app.ini
+**/config/app.ini
+
+# Course materials and unrelated deliverables in this workspace
+/实验报告/
+/演示视频/
+/答辩照片/
+/*.zip
+/*.pptx
+/项目源码/yyzlab/
+
+# Transfer artifacts and board-side binaries
+/项目源码/b_server/board/root@*
+/项目源码/b_server/board/board
+/项目源码/SmartHomeQt_linux/SmartHomeQt/SmartHomeQt

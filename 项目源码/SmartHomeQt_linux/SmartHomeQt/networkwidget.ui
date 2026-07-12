@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NetworkWidget</class>
+ <widget class="QWidget" name="NetworkWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>975</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f6f8fb;
+    color: #1f2937;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+}
+
+QLabel {
+    background: transparent;
+    color: #273445;
+    font-weight: 500;
+}
+
+QLabel#labelTitle {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QLineEdit, QTextEdit, QComboBox {
+    background-color: #ffffff;
+    color: #202a3a;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #34c38f;
+}
+
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 1px solid #34c38f;
+}
+
+QLineEdit[readOnly=&quot;true&quot;], QTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #334155;
+}
+
+QPushButton {
+    background-color: #34c38f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    min-height: 34px;
+    padding: 5px 16px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #27ae7e;
+}
+
+QPushButton#btnBack, QPushButton#btnClear, QPushButton#btnDisconnect, QPushButton#btnReset {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #d9e1ec;
+}
+
+QPushButton#btnBack:hover, QPushButton#btnClear:hover, QPushButton#btnDisconnect:hover, QPushButton#btnReset:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+  </property>
+  <widget class="QLabel" name="labelTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>    网络连接配置</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPubMessage">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>410</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发布内容</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelReceive">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>500</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>接收内容</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelLog">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>720</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>日志信息</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditPubMessage">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>440</y>
+     <width>571</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditReceive">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>530</y>
+     <width>571</width>
+     <height>181</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditLog">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>740</y>
+     <width>571</width>
+     <height>211</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>0</y>
+     <width>131</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>返回主界面</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>80</y>
+     <width>72</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="labelHost">
+      <property name="text">
+       <string>服务器地址</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelClientId">
+      <property name="text">
+       <string>ClientId</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelUsername">
+      <property name="text">
+       <string>用户名</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelState">
+      <property name="text">
+       <string>连接状态</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>81</y>
+     <width>147</width>
+     <height>172</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLineEdit" name="lineEditHost"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditClientId"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditUsername"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditState"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>80</y>
+     <width>51</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="labelPort">
+      <property name="text">
+       <string>端口</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelPassword">
+      <property name="text">
+       <string>密码</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>80</y>
+     <width>147</width>
+     <height>84</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QLineEdit" name="lineEditPort"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditPassword"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>260</y>
+     <width>68</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QLabel" name="labelSubTopic">
+      <property name="text">
+       <string>订阅Topic</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelPubTopic">
+      <property name="text">
+       <string>发布Topic</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>260</y>
+     <width>147</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QLineEdit" name="lineEditSubTopic"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditPubTopic"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>170</y>
+     <width>311</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QPushButton" name="btnConnect">
+        <property name="text">
+         <string>连接</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSubscribe">
+        <property name="text">
+         <string>订阅</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QPushButton" name="btnDisconnect">
+        <property name="text">
+         <string>断开</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnPublish">
+        <property name="text">
+         <string>发布</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

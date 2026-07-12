@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MonitorWidget</class>
+ <widget class="QWidget" name="MonitorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f6f8fb;
+    color: #1f2937;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+}
+
+QLabel {
+    background: transparent;
+    color: #273445;
+    font-weight: 500;
+}
+
+QLabel#labelTitle {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QLineEdit, QTextEdit, QComboBox {
+    background-color: #ffffff;
+    color: #202a3a;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #34c38f;
+}
+
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 1px solid #34c38f;
+}
+
+QLineEdit[readOnly=&quot;true&quot;], QTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #334155;
+}
+
+QPushButton {
+    background-color: #34c38f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    min-height: 34px;
+    padding: 5px 16px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #27ae7e;
+}
+
+QPushButton#btnBack, QPushButton#btnClear, QPushButton#btnDisconnect, QPushButton#btnReset {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #d9e1ec;
+}
+
+QPushButton#btnBack:hover, QPushButton#btnClear:hover, QPushButton#btnDisconnect:hover, QPushButton#btnReset:hover {
+    background-color: #eefaf5;
+    border-color: #34c38f;
+    color: #34c38f;
+}</string>
+  </property>
+  <widget class="QLabel" name="labelTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>   传感器监视界面</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelUpdateTime_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>470</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>JSON</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditJson">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>490</y>
+     <width>581</width>
+     <height>201</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>90</y>
+     <width>651</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="labelTemp">
+        <property name="text">
+         <string>温度</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelHum">
+        <property name="text">
+         <string>湿度</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelLight">
+        <property name="text">
+         <string>光照</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelBeeper">
+        <property name="text">
+         <string>蜂鸣器状态</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelFan">
+        <property name="text">
+         <string>风扇状态</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelLed">
+        <property name="text">
+         <string>灯光状态</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelUpdateTime">
+        <property name="text">
+         <string>更新时间</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="lineEditTemp"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditHum"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditLight"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditBeeper"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditFan"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditLed"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditUpdateTime"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>78</x>
+     <y>730</y>
+     <width>581</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QPushButton" name="btnRefresh">
+      <property name="text">
+       <string>刷新数据</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnClear">
+      <property name="text">
+       <string>清空</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnBack">
+      <property name="text">
+       <string>返回主界面</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

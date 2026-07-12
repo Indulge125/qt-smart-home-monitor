@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterWidget</class>
+ <widget class="QWidget" name="RegisterWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RegisterWidget {
+    background-color: #f6f8fb;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+    color: #1f2937;
+}</string>
+  </property>
+  <widget class="QFrame" name="registerCard">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>380</width>
+     <height>460</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#registerCard {
+    background-color: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="labelTitle">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>300</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+}</string>
+    </property>
+    <property name="text">
+     <string>智能家居系统</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelSubtitle">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>300</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelSubtitle {
+    font-size: 15px;
+    color: #64748b;
+}</string>
+    </property>
+    <property name="text">
+     <string>注册账号</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUsername">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>300</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #1f2937;
+}
+QLineEdit:focus {
+    border: 1px solid #34c38f;
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>请输入用户名</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPassword">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>175</y>
+      <width>300</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #1f2937;
+}
+QLineEdit:focus {
+    border: 1px solid #34c38f;
+}</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>请输入密码</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditConfirmPassword">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>300</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #1f2937;
+}
+QLineEdit:focus {
+    border: 1px solid #34c38f;
+}</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>请再次输入密码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMessage">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>285</y>
+      <width>300</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelMessage {
+    color: #64748b;
+    font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string> 请输入注册信息</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRegister">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>330</y>
+      <width>300</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btnRegister {
+    background-color: #34c38f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+QPushButton#btnRegister:hover {
+    background-color: #27ae7e;
+}</string>
+    </property>
+    <property name="text">
+     <string>注册</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBackLogin">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>385</y>
+      <width>300</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btnBackLogin {
+    background-color: transparent;
+    color: #2f80ed;
+    border: none;
+}
+
+QPushButton#btnBackLogin:hover {
+    color: #1f6fd6;
+}</string>
+    </property>
+    <property name="text">
+     <string>返回登录</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
